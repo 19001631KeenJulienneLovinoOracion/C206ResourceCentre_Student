@@ -143,16 +143,23 @@ public class ResourceCentre {
 		System.out.println(output);
 	}
 
-	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
+	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) { //Completed by Keen
 		String output = "";
-		// write your code here
+		
+		for (int object = 0; object < chromebookList.size(); object ++) {
+			
+			output += String.format("%-10s %-30s %-10s %-10s %-20s\n", chromebookList.get(object).getAssetTag(), chromebookList.get(object).getDescription()
+					,ResourceCentre.showAvailability(chromebookList.get(object).getIsAvailable()),chromebookList.get(object).getDueDate(),chromebookList.get(object).getOs());
+		}
 		return output;
 	}
-	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
-		
-		String output = retrieveAllChromebook(chromebookList);
+	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) { //Completed by Keen
+		ResourceCentre.setHeader("CHROMEBOOK LIST");
+		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION","AVAILABLE", "DUE DATE","OS");
+		output += retrieveAllChromebook(chromebookList);
 		System.out.println(output);
 	}
+
 
 	//================================= Option 2 Add =================================
 	public static Camcorder inputCamcorder() {
