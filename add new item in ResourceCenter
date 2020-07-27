@@ -1,0 +1,36 @@
+public static Camcorder inputCamcorder() {
+		String tag = Helper.readString("Enter asset tag > ");
+	    String description = Helper.readString("Enter description > ");
+	    int zoom = Helper.readInt("Enter optical zoom > ");
+	    
+	    Camcorder cc= new Camcorder(tag, description, zoom);
+	    return cc;
+	}
+	
+	public static void addCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc) {
+		camcorderList.add(cc);
+		if (camcorderList.add(cc) == true) {
+			System.out.println("Camcorder Added !");
+		}else{
+			System.out.println("Camcorder Not Added !");
+		}
+	}
+
+	public static Chromebook inputChromebook() {
+		String tag = Helper.readString("Enter asset tag > ");
+		String description = Helper.readString("Enter description > ");
+		String os = Helper.readString("Enter os > ");
+		   
+		Chromebook cb= new Chromebook(tag, description, os);
+		return cb;
+	}
+	
+	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
+		chromebookList.add(cb);
+		
+		if (chromebookList.add(cb) == true) {
+			System.out.println("Camcorder Added !");
+		}else{
+			System.out.println("Camcorder Not Added !");
+		}
+	}
