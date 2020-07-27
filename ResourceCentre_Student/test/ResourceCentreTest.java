@@ -55,6 +55,9 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
+	
+	
+	
 	public void retrieveAllCamcorderTest() {
 		// Test if Item list is not null but empty, so that can add a new item
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
@@ -79,9 +82,33 @@ public class ResourceCentreTest {
 		
 	}
 	@Test
-	public void retrieveAllChromebookTest() {
+	public void retrieveAllChromebookTest() { //Completed by Keen
 		//fail("Not yet implemented");
-		// write your code here
+		//write your code here
+		//Checking if chromebookList exists so that test objects can be added
+		assertNotNull("Check if the chromebookList ArrayList is existing", chromebookList);
+		
+		//Checking if the current Chromebook Arraylist is empty before attempting to add new objects
+		
+		String allChromeBook= ResourceCentre.retrieveAllChromebook(chromebookList);
+		String expectedOutput = "";
+		assertEquals("Check that ViewAllCamcorderlist", expectedOutput, allChromeBook);
+		
+		
+		//Checking if an cb1 and cb2 can be added to ChromebookList and the size of Arraylist is now 2
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		assertEquals("Test if that Camcorder arraylist size is 1?",2, chromebookList.size());
+		
+		
+		//Checking if the the expected and actual output matches
+		allChromeBook= ResourceCentre.retrieveAllChromebook(chromebookList);
+		
+		expectedOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0011", "My Google Chromebook 1st","Yes","","Mac OS");
+		expectedOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
+		assertEquals("Check that ViewAllCamcorderlist", expectedOutput, allChromeBook);
+		
+
 	}
 
 	@Test
