@@ -98,7 +98,13 @@ public class ResourceCentreTest {
 	
 	@Test
 	public void doLoanChromebookTest() {
-	
+		ResourceCentre.addChromebook(chromebookList, cb1);
+        ResourceCentre.addChromebook(chromebookList, cb2);
+        assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
+
+        //attempt to loan cb1, if loaned assert equal will succeed.
+        ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), "24/7/2020");
+        assertEquals("Test if Chromebook cc1 is loaned out", chromebookList.get(0).getDueDate(), "24/7/2020");
 	}
 	
 	@Test
