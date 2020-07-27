@@ -86,15 +86,19 @@ public class ResourceCentreTest {
 
 	@Test
 	public void doLoanCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+        ResourceCentre.addCamcorder(camcorderList, cc2);
+        assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
+
+        //attempt to loan cc1, if loaned assert equal will succeed.
+        ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), "tomorrow");
+        assertEquals("Test if Camcorder cc1 is loaned out", camcorderList.get(0).getDueDate(), "tomorrow");
 		
 	}
 	
 	@Test
 	public void doLoanChromebookTest() {
-		//fail("Not yet implemented");
-		// write your code here
+		
 	}
 	
 	@Test
