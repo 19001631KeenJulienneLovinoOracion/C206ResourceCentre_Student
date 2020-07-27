@@ -211,7 +211,6 @@ public class ResourceCentre {
 	}
 	
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
-		
 		boolean isLoaned = false;
 
 		for (int i = 0; i < chromebookList.size(); i++) {
@@ -229,7 +228,7 @@ public class ResourceCentre {
 
 	}
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
-
+		
 	}
 	
 	//================================= Option 4 Return =================================
